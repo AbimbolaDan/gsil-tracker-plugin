@@ -1,0 +1,153 @@
+
+
+:root {
+    --primary-blue: #3B3EA5;  
+    --hover-blue: #1E1B9E;
+    --primary-green: #22C55E;
+    --hover-green: #1A9F4B;
+    --primary-red: #EF4444; 
+    --light-blue-bg: #F0F2FF; 
+    --text-dark: #1A1A2E;          
+    --text-muted: #646691;   
+    --border: #D8DAF0;   
+    --primary-yellow: #FFCC2A;
+}
+
+/* Scoped Container - Everything is inside .gsil-tracker-plugin */
+.gsil-tracker-plugin {
+    margin: 0 auto;
+    width: 100%;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gsil-tracker-plugin .content-wrapper {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.gsil-tracker-plugin #track-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.gsil-tracker-plugin #track {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.gsil-tracker-plugin .input-div {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.gsil-tracker-plugin input#Number {
+    flex: 1;
+    padding: 13px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.gsil-tracker-plugin input#Number:focus {
+    border-color: var(--primary-blue);
+}
+
+.gsil-tracker-plugin #track-btn {
+    padding: 13px 25px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.gsil-tracker-plugin #track-btn:hover {
+    background-color: var(--hover-blue);
+}
+
+/* Map Styling */
+.gsil-tracker-plugin #map-hero {
+    width: 100%;       
+    height: 450px;      
+    margin: 20px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    z-index: 1; /* Keep leaflet controls from floating weirdly */
+}
+
+/* Results Section */
+.gsil-tracker-plugin .result-box {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.gsil-tracker-plugin .status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.gsil-tracker-plugin .status-badge.delivered { background: #DCFCE7; color: #166534; }
+.gsil-tracker-plugin .status-badge.transit { background: #DBEAFE; color: #1E40AF; }
+.gsil-tracker-plugin .status-badge.pending { background: #FEF9C3; color: #854D0E; }
+
+/* Timeline UI */
+.gsil-tracker-plugin .timeline {
+    margin-top: 20px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.gsil-tracker-plugin .timeline-item {
+    position: relative;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    border-left: 2px solid var(--border);
+}
+
+.gsil-tracker-plugin .timeline-dot {
+    position: absolute;
+    left: -7px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--border);
+    border-radius: 50%;
+}
+
+.gsil-tracker-plugin .timeline-item.active .timeline-dot {
+    background: var(--primary-green);
+    box-shadow: 0 0 0 4px #DCFCE7;
+}
+
+.gsil-tracker-plugin .hidden {
+    display: none !important;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .gsil-tracker-plugin .result-box {
+        flex-direction: column;
+    }
+    .gsil-tracker-plugin .input-div {
+        flex-direction: column;
+    }
+}
