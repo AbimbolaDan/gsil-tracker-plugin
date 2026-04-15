@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Plugin Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Abimbola Daniel">
+    <meta name="description" content="GSIL Customer Tracking Portal">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="plugin-style.css">
+    <title>GSIL | Track Your Shipment</title>
 </head>
 <body>
+    <div id="loading-overlay" class="hidden">
+        <div class="spinner"></div>
+        <p class="loading-text">RETRIEVING SHIPMENT DATA...</p>
+    </div>
+    <div class="trackingPage">
+        <div class="content-wrapper">
+            <form id="track-form">
+                <label for="Number" id="track">Track your Shipment</label>
+                <div class="input-div">
+                    <input type="text" id="Number" placeholder="E.g. GS882930" required>
+                    <button type="submit" id="track-btn">Track</button>
+                </div>
+            </form>
 
-    <div id="gsil-tracker-root"></div>
+            <div id="map-hero" class="hidden"></div>
 
-    <script src="https://cdn.jsdelivr.net/gh/AbimbolaDan/gsil-tracker-plugin@Main/gsil-tracker-plugin.js"></script>
+            <div id="tracking-results" class="hidden"></div>
+        </div>
+    </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="plugin-logic.js"></script>
 </body>
 </html>
